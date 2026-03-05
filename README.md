@@ -1,7 +1,7 @@
 # tiny-map
 
-[![npm version](https://img.shields.io/npm/v/map-tiny.svg)](https://www.npmjs.com/package/map-tiny)
-[![npm downloads](https://img.shields.io/npm/dm/map-tiny.svg)](https://www.npmjs.com/package/map-tiny)
+[![npm version](https://img.shields.io/npm/v/tiny-pmap.svg)](https://www.npmjs.com/package/tiny-pmap)
+[![npm downloads](https://img.shields.io/npm/dm/tiny-pmap.svg)](https://www.npmjs.com/package/tiny-pmap)
 [![CI](https://github.com/ofershap/tiny-map/actions/workflows/ci.yml/badge.svg)](https://github.com/ofershap/tiny-map/actions/workflows/ci.yml)
 [![TypeScript](https://img.shields.io/badge/TypeScript-strict-blue.svg)](https://www.typescriptlang.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
@@ -9,7 +9,7 @@
 Map over promises with concurrency control. Same API as [`p-map`](https://github.com/sindresorhus/p-map), but ships both ESM and CJS with zero dependencies.
 
 ```ts
-import { pMap } from "map-tiny";
+import { pMap } from "tiny-pmap";
 
 const pages = await pMap(urls, (url) => fetch(url).then((r) => r.text()), {
   concurrency: 5,
@@ -25,13 +25,13 @@ const pages = await pMap(urls, (url) => fetch(url).then((r) => r.text()), {
 ## Install
 
 ```bash
-npm install map-tiny
+npm install tiny-pmap
 ```
 
 ## Usage
 
 ```ts
-import { pMap } from "map-tiny";
+import { pMap } from "tiny-pmap";
 
 const users = await pMap([1, 2, 3, 4, 5], (id) => fetchUser(id), {
   concurrency: 3,
@@ -41,7 +41,7 @@ const users = await pMap([1, 2, 3, 4, 5], (id) => fetchUser(id), {
 ### Skip items from results
 
 ```ts
-import { pMap, pMapSkip } from "map-tiny";
+import { pMap, pMapSkip } from "tiny-pmap";
 
 const adults = await pMap(users, (user) => {
   if (user.age < 18) return new pMapSkip();
@@ -99,7 +99,7 @@ await pMap(urls, fetchPage, {
 
 ```diff
 - import pMap from "p-map";
-+ import { pMap } from "map-tiny";
++ import { pMap } from "tiny-pmap";
 ```
 
 One line. Everything else stays the same.
@@ -135,7 +135,7 @@ Drop-in replacements for sindresorhus async utilities. All ship ESM + CJS with z
 | [tiny-ms](https://github.com/ofershap/tiny-ms)         | ms                   | Parse/format durations         |
 | [tiny-escape](https://github.com/ofershap/tiny-escape) | escape-string-regexp | Escape regex chars             |
 
-Want all async utilities in one import? Use [`tiny-async-kit`](https://github.com/ofershap/tiny-async).
+Want all async utilities in one import? Use [`tiny-pasync`](https://github.com/ofershap/tiny-async).
 
 ## Author
 
