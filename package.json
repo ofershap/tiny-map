@@ -1,5 +1,5 @@
 {
-  "name": "tiny-map",
+  "name": "map-tiny",
   "version": "1.0.0",
   "description": "Map over promises with concurrency control. Same API as p-map, ships ESM + CJS with zero dependencies.",
   "type": "module",
